@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
     @IBAction func loginPage()
     {
-
+// this is to test parallel changes on diff files
     }
 
 }
