@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5C429767-A1D4-4BF7-BA09-49544E4AB35F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Onaji</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7A3E5FA8245A157E33687BD6E12A26C06F8266AA</key>
+		<string>https://github.com/matthewli1997/Onaji.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Onaji.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7A3E5FA8245A157E33687BD6E12A26C06F8266AA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/matthewli1997/Onaji.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7A3E5FA8245A157E33687BD6E12A26C06F8266AA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7A3E5FA8245A157E33687BD6E12A26C06F8266AA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Onaji</string>
+		</dict>
+	</array>
+</dict>
+</plist>
