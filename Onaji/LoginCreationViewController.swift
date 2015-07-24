@@ -11,5 +11,13 @@ import UIKit
 class LoginCreationViewController: UIViewController {
 
 
+    @IBOutlet weak var usernameEntered: UITextField!
 
+    @IBOutlet weak var passwordEntered: UITextField!
+    
+    
+    @IBAction func createLogin()
+    {
+        
+    }
 }

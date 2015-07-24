@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3437E59B1B61DC7E00F0923E /* LoginCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3437E59A1B61DC7E00F0923E /* LoginCreationViewController.swift */; };
+		3437E59D1B61DD9300F0923E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3437E59C1B61DD9300F0923E /* UserInfo.swift */; };
 		3463A0701B5EF12C004C4103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463A06F1B5EF12C004C4103 /* AppDelegate.swift */; };
 		3463A0721B5EF12C004C4103 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463A0711B5EF12C004C4103 /* ViewController.swift */; };
 		3463A0751B5EF12C004C4103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3463A0731B5EF12C004C4103 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		3437E59A1B61DC7E00F0923E /* LoginCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCreationViewController.swift; sourceTree = "<group>"; };
+		3437E59C1B61DD9300F0923E /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		3463A06A1B5EF12C004C4103 /* Onaji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Onaji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3463A06E1B5EF12C004C4103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3463A06F1B5EF12C004C4103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				3463A0711B5EF12C004C4103 /* ViewController.swift */,
 				3463A0731B5EF12C004C4103 /* Main.storyboard */,
 				3437E59A1B61DC7E00F0923E /* LoginCreationViewController.swift */,
+				3437E59C1B61DD9300F0923E /* UserInfo.swift */,
 				3463A06D1B5EF12C004C4103 /* Supporting Files */,
 			);
 			path = Onaji;
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3437E59D1B61DD9300F0923E /* UserInfo.swift in Sources */,
 				3463A0721B5EF12C004C4103 /* ViewController.swift in Sources */,
 				3437E59B1B61DC7E00F0923E /* LoginCreationViewController.swift in Sources */,
 				3463A0701B5EF12C004C4103 /* AppDelegate.swift in Sources */,
