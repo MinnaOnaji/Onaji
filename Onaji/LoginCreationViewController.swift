@@ -10,7 +10,6 @@ import UIKit
 
 class LoginCreationViewController: UIViewController {
 
-
     @IBOutlet weak var usernameEntered: UITextField!
 
     @IBOutlet weak var passwordEntered: UITextField!
@@ -18,6 +17,6 @@ class LoginCreationViewController: UIViewController {
     
     @IBAction func createLogin()
     {
-        
+        UserInfo.addUser(usernameEntered.text, newPassword: passwordEntered.text)
     }
 }
