@@ -115,7 +115,7 @@
                                     <action selector="createLogin" destination="3r5-Em-tKp" eventType="touchUpInside" id="1XB-oi-dOC"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="SWEG" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yvb-78-xUA">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Kimchi" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yvb-78-xUA">
                                 <rect key="frame" x="301" y="89" width="216" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="65"/>
                                 <textInputTraits key="textInputTraits"/>
