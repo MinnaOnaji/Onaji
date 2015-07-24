@@ -8,18 +8,20 @@
 
 import Foundation
 
+class UserInfo {
+    let storage = NSUserDefaults.standardUserDefaults()
     
-let storage = NSUserDefaults.standardUserDefaults()
-
-var userLoginInfo = [String:String]()
-
-func addUser(newUserName: String, newPassword: String) {
-    userLoginInfo[newUserName] = newPassword
-}
-func testLogin(username: String, password: String) -> Bool {
-    if userLoginInfo[username] == password {
-        return true
+    var userLoginInfo = [String:String]()
+    
+    func addUser(newUserName: String, newPassword: String) {
+        userLoginInfo[newUserName] = newPassword
     }
-    return false
-    
+    func testLogin(username: String, password: String) -> Bool {
+        if userLoginInfo[username] == password {
+            return true
+        }
+        return false
+        
+    }
+
 }

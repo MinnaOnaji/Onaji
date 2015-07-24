@@ -14,9 +14,9 @@ class LoginCreationViewController: UIViewController {
 
     @IBOutlet weak var passwordEntered: UITextField!
     
-    
+    var userInfo = UserInfo()
     @IBAction func createLogin()
     {
-        UserInfo.addUser(usernameEntered.text, newPassword: passwordEntered.text)
+        userInfo.addUser(usernameEntered.text, newPassword: passwordEntered.text)
     }
 }
