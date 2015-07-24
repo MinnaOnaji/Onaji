@@ -22,6 +22,7 @@ class LoginScreenViewController: UIViewController
         let loginSuccess = userinfo.testLogin(username.text,password:password.text)
         if(loginSuccess) {
             loginState.text = "ya"
+            performSegueWithIdentifier("loginSuccess", sender: self)
         }
         else
         {
