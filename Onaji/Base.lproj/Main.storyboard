@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONAJI - LOGO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roK-tT-ZHe">
-                                <rect key="frame" x="16" y="28" width="210" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0C-DG-hF6">
                                 <rect key="frame" x="217" y="274" width="167" height="51"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,6 +47,12 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8N0-l8-8ej">
+                                <rect key="frame" x="16" y="20" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8N0-l8-8ej" secondAttribute="height" multiplier="1:1" id="bCv-TG-yBX"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -59,12 +60,16 @@
                             <constraint firstAttribute="centerX" secondItem="Z0C-DG-hF6" secondAttribute="centerX" constant="-0.5" id="Bps-hV-rE3"/>
                             <constraint firstAttribute="centerY" secondItem="Z0C-DG-hF6" secondAttribute="centerY" constant="0.5" id="I3l-Xw-sEc"/>
                             <constraint firstItem="FVT-rU-VCZ" firstAttribute="trailing" secondItem="Z0C-DG-hF6" secondAttribute="trailing" id="Uzs-gM-O8o"/>
+                            <constraint firstItem="8N0-l8-8ej" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Z5h-lN-Ty7"/>
                             <constraint firstItem="FVT-rU-VCZ" firstAttribute="leading" secondItem="Z0C-DG-hF6" secondAttribute="leading" id="Zwm-e6-Os4"/>
-                            <constraint firstItem="roK-tT-ZHe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="fAD-X1-rdE"/>
-                            <constraint firstItem="roK-tT-ZHe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fU5-tC-IKj"/>
+                            <constraint firstItem="8N0-l8-8ej" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cIT-Cz-Xbu"/>
+                            <constraint firstItem="8N0-l8-8ej" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:6" id="eUz-bZ-sgl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kU5-AP-XHh"/>
+                    <connections>
+                        <outlet property="onajiLogo" destination="8N0-l8-8ej" id="gxA-XK-frg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
