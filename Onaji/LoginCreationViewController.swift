@@ -8,13 +8,14 @@
 
 import UIKit
 
-class LoginCreationViewController: UIViewController {
-
+class LoginCreationViewController: UIViewController
+{
     @IBOutlet weak var usernameEntered: UITextField!
 
     @IBOutlet weak var passwordEntered: UITextField!
     
     var userInfo = UserInfo()
+    
     @IBAction func createLogin()
     {
         userInfo.addUser(usernameEntered.text, newPassword: passwordEntered.text)

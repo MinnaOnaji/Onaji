@@ -7,13 +7,17 @@
 //
 
 import Foundation
+import CoreData
 
-class UserInfo {
+class UserInfo
+{
     
 //    var userLoginInfo = [String:String]()
 
     var userLoginInfo: [String:String]
-    init() {
+    
+    init()
+    {
         if let retrieveInfo: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("logins")
         {
             userLoginInfo = retrieveInfo as! [String:String]
@@ -24,17 +28,19 @@ class UserInfo {
         }
     }
     
-    func addUser(newUserName: String, newPassword: String) {
+    func addUser(newUserName: String, newPassword: String)
+    {
         userLoginInfo[newUserName] = newPassword
         NSUserDefaults.standardUserDefaults().setObject(userLoginInfo, forKey: "logins")
     }
-    func testLogin(username: String, password: String) -> Bool {
-        if userLoginInfo[username] == password {
+    
+    func testLogin(username: String, password: String) -> Bool
+    {
+        if userLoginInfo[username] == password
+        {
             return true
         }
+        
         return false
-        
-        
     }
-
 }
