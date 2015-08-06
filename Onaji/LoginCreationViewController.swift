@@ -5,6 +5,8 @@
 //  Created by Matthew Li on 7/23/15.
 //  Copyright (c) 2015 Same. All rights reserved.
 //
+//  Create a new user in the database
+//  
 
 import UIKit
 

@@ -8,6 +8,9 @@
 
 import UIKit
 
+//View class
+//Appears only if user is not logged in
+//Allow user
 class ViewController: UIViewController
 {
     @IBOutlet weak var onajiLogo: UIImageView!
