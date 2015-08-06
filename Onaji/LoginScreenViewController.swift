@@ -49,4 +49,15 @@ class LoginScreenViewController: UIViewController
             self.performSegueWithIdentifier("loginCorrect", sender:nil)
         }
     }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        if let touch = touches.first as? UITouch{
+            self.view.endEditing(true)
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

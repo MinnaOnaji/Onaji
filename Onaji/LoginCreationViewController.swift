@@ -22,4 +22,15 @@ class LoginCreationViewController: UIViewController
     {
         //userInfo.addUser(usernameEntered.text, newPassword: passwordEntered.text)
     }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        if let touch = touches.first as? UITouch{
+            self.view.endEditing(true)
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
