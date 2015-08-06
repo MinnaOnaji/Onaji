@@ -724,7 +724,7 @@
                                 <rect key="frame" x="16" y="64" width="568" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="home" rowHeight="100" id="lCP-MS-iU1">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="home" rowHeight="100" id="lCP-MS-iU1" customClass="FriendTableViewCell" customModule="Onaji" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lCP-MS-iU1" id="ydW-fW-ZIb">
@@ -761,6 +761,11 @@
                                                 <constraint firstItem="eUO-CP-F7d" firstAttribute="leading" secondItem="ydW-fW-ZIb" secondAttribute="leadingMargin" id="xbl-ew-cGV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="friendBio" destination="aLX-Mm-MAA" id="UNK-c9-frQ"/>
+                                            <outlet property="friendFullName" destination="SoS-YM-nhg" id="2B4-0w-WTh"/>
+                                            <outlet property="profileImage" destination="eUO-CP-F7d" id="bCI-cr-ATp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -792,7 +797,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2412" y="1151"/>
+            <point key="canvasLocation" x="2354" y="1099"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

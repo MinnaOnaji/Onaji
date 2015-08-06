@@ -16,6 +16,7 @@
 		3463A0771B5EF12C004C4103 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3463A0761B5EF12C004C4103 /* Images.xcassets */; };
 		3463A07A1B5EF12C004C4103 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3463A0781B5EF12C004C4103 /* LaunchScreen.xib */; };
 		3463A0861B5EF12C004C4103 /* OnajiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463A0851B5EF12C004C4103 /* OnajiTests.swift */; };
+		34C7FB3C1B731D48001FB892 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C7FB3B1B731D48001FB892 /* FriendTableViewCell.swift */; };
 		6A42BF6B1B69E46D000C6B21 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A42BF6A1B69E46D000C6B21 /* SearchViewController.swift */; };
 		6A42BF6D1B69ED7A000C6B21 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A42BF6C1B69ED7A000C6B21 /* FriendViewController.swift */; };
 		6A42BF6F1B6A00B3000C6B21 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A42BF6E1B6A00B3000C6B21 /* MessagesViewController.swift */; };
@@ -48,6 +49,7 @@
 		3463A07F1B5EF12C004C4103 /* OnajiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnajiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3463A0841B5EF12C004C4103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3463A0851B5EF12C004C4103 /* OnajiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnajiTests.swift; sourceTree = "<group>"; };
+		34C7FB3B1B731D48001FB892 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		6A42BF6A1B69E46D000C6B21 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6A42BF6C1B69ED7A000C6B21 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendViewController.swift; path = ../FriendViewController.swift; sourceTree = "<group>"; };
 		6A42BF6E1B6A00B3000C6B21 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesViewController.swift; path = ../MessagesViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				6A42BF6C1B69ED7A000C6B21 /* FriendViewController.swift */,
 				6AE566781B69E359003077E3 /* HomeViewController.swift */,
 				3463A0731B5EF12C004C4103 /* Main.storyboard */,
+				34C7FB3B1B731D48001FB892 /* FriendTableViewCell.swift */,
 				6A42BF6A1B69E46D000C6B21 /* SearchViewController.swift */,
 				6AE566761B69C7E3003077E3 /* SettingsViewController.swift */,
 				3437E59A1B61DC7E00F0923E /* LoginCreationViewController.swift */,
@@ -242,6 +245,7 @@
 				6AE566791B69E359003077E3 /* HomeViewController.swift in Sources */,
 				3437E59D1B61DD9300F0923E /* UserInfo.swift in Sources */,
 				3463A0721B5EF12C004C4103 /* ViewController.swift in Sources */,
+				34C7FB3C1B731D48001FB892 /* FriendTableViewCell.swift in Sources */,
 				6A42BF6B1B69E46D000C6B21 /* SearchViewController.swift in Sources */,
 				6A42BF6D1B69ED7A000C6B21 /* FriendViewController.swift in Sources */,
 				6AE566751B69C68D003077E3 /* User.swift in Sources */,
