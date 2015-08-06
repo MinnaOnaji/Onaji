@@ -13,7 +13,7 @@ import UIKit
 
 class LoginScreenViewController: UIViewController
 {
-    var userinfo = UserInfo()
+    //var userinfo = UserInfo()
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var loginState: UILabel!
@@ -28,7 +28,7 @@ class LoginScreenViewController: UIViewController
     
     @IBAction func userLogin()
     {
-        loginSuccess = userinfo.testLogin(username.text,password:password.text)
+        //loginSuccess = userinfo.testLogin(username.text,password:password.text)
         
         if(loginSuccess)
         {
