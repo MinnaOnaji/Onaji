@@ -21,6 +21,4 @@ class User
         username = myUsername
         password = myPassword
     }
-    
-    
 }

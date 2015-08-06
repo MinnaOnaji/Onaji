@@ -10,5 +10,5 @@ import UIKit
 
 class FriendViewController: UIViewController
 {
-	let sweg2 = 0
+	
 }
