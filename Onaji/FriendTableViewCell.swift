@@ -17,4 +17,12 @@ class FriendTableViewCell : UITableViewCell
     @IBOutlet weak var friendFullName: UILabel!
     
     @IBOutlet weak var friendBio: UILabel!
+    
+//    var name: String = ""
+//    var bio: String = ""
+//    
+//    func setProfileStrings(name:String, biography bio:String) {
+//        friendFullName.text = name
+//        friendBio.text = bio
+//    }
 }
