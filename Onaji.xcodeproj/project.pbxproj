@@ -97,6 +97,7 @@
 		3463A06C1B5EF12C004C4103 /* Onaji */ = {
 			isa = PBXGroup;
 			children = (
+				3463A06F1B5EF12C004C4103 /* AppDelegate.swift */,
 				3463A0711B5EF12C004C4103 /* ViewController.swift */,
 				6A42BF6E1B6A00B3000C6B21 /* MessagesViewController.swift */,
 				6A42BF6C1B69ED7A000C6B21 /* FriendViewController.swift */,
@@ -117,7 +118,6 @@
 		3463A06D1B5EF12C004C4103 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3463A06F1B5EF12C004C4103 /* AppDelegate.swift */,
 				3463A0761B5EF12C004C4103 /* Images.xcassets */,
 				3463A0781B5EF12C004C4103 /* LaunchScreen.xib */,
 				3463A06E1B5EF12C004C4103 /* Info.plist */,
