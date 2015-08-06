@@ -12,12 +12,12 @@ import UIKit
 class FriendTableViewCell : UITableViewCell
 {
     
-    @IBOutlet weak var profileImage: UIImageView!
-    
-    @IBOutlet weak var friendFullName: UILabel!
-    
-    @IBOutlet weak var friendBio: UILabel!
-    
+//    @IBOutlet weak var profileImage: UIImageView!
+//    
+//    @IBOutlet weak var friendFullName: UILabel!
+//    
+//    @IBOutlet weak var friendBio: UILabel!
+//	
 //    var name: String = ""
 //    var bio: String = ""
 //    

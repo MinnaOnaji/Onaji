@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendViewController: UITableViewController
+class FriendViewController: UIViewController
 {
     var friends = [[User]]()
     //retrieve friends from database
@@ -28,18 +28,18 @@ class FriendViewController: UITableViewController
 //        }
 //    }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-        let dequeued: AnyObject = tableView.dequeueReusableCellWithIdentifier("home", forIndexPath: indexPath)
-        let cell = dequeued as! FriendTableViewCell
-        
-        let currentFriend = friends[indexPath.section][indexPath.row]
-        
-        cell.friendFullName.text = currentFriend.firstName + " " + currentFriend.lastName
-        cell.friendBio.text = currentFriend.bio
-        
-        return cell
-    }
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+//    {
+//        let dequeued: AnyObject = tableView.dequeueReusableCellWithIdentifier("home", forIndexPath: indexPath)
+//        let cell = dequeued as! FriendTableViewCell
+//        
+//        let currentFriend = friends[indexPath.section][indexPath.row]
+//        
+//        cell.friendFullName.text = currentFriend.firstName + " " + currentFriend.lastName
+//        cell.friendBio.text = currentFriend.bio
+//        
+//        return cell
+//    }
  
     //display cells
 }
