@@ -19,7 +19,10 @@ class LoginCreationViewController: UIViewController
     @IBOutlet weak var passwordEntered: UITextField!
     
     //var userInfo = UserInfo()
-
+    
+    override func viewDidLoad() {
+        passwordEntered.secureTextEntry = true
+    }
     
     @IBAction func createLogin()
     {
