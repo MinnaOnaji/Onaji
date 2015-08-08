@@ -10,5 +10,18 @@ import UIKit
 
 class ProfileSettingsViewController: SettingsViewController
 {
+	@IBOutlet weak var streetAddressTextField: UITextField!
+	@IBOutlet weak var statePicker: UIPickerView!
+	@IBOutlet weak var zipCodeTextField: UITextField!
 	
+	@IBAction func saveClicked(sender: UIButton)
+	{
+		//Save the changes and send to database
+	}
+	
+	override func viewDidLoad()
+	{
+		super.viewDidLoad()
+		//Retrieve old info from database and display
+	}
 }
