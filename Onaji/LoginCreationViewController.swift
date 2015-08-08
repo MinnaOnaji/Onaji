@@ -9,7 +9,6 @@
 //  
 
 import UIKit
-import CryptoSwift
 import Parse
 
 class LoginCreationViewController: UIViewController
@@ -29,7 +28,7 @@ class LoginCreationViewController: UIViewController
         //userInfo.addUser(usernameEntered.text, newPassword: passwordEntered.text)
         let account = PFUser()
         account.username = usernameEntered.text
-        account.password = passwordEntered.text.sha256()
+        account.password = passwordEntered.text
         account.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             println("Account with username " + self.usernameEntered.text + " has been created successfully.")
         }
