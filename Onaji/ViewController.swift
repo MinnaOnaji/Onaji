@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 //View class
 //Appears only if user is not logged in
@@ -18,6 +19,13 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+//        Example usage of storing stuff in Parse
+//        let testObject = PFObject(className: "TestObject")
+//        testObject["foo"] = "bar"
+//        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+//            println("Object has been saved.")
+//        }
         
         onajiLogo.image = UIImage(named: "logo")
     }
