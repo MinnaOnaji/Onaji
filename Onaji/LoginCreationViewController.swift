@@ -9,6 +9,8 @@
 //  
 
 import UIKit
+import CryptoSwift
+import Parse
 
 class LoginCreationViewController: UIViewController
 {
@@ -17,10 +19,17 @@ class LoginCreationViewController: UIViewController
     @IBOutlet weak var passwordEntered: UITextField!
     
     //var userInfo = UserInfo()
+
     
     @IBAction func createLogin()
     {
         //userInfo.addUser(usernameEntered.text, newPassword: passwordEntered.text)
+        let account = PFUser()
+        account.username = usernameEntered.text
+        account.password = passwordEntered.text.sha256()
+        account.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            println("Account with username " + self.usernameEntered.text + " has been created successfully.")
+        }
     }
 	
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
