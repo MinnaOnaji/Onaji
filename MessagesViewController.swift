@@ -11,9 +11,8 @@
 //
 
 import UIKit
-import Foundation
 
-class MessagesViewController: JSQMessagesViewController
+class MessagesViewController: UIViewController
 {
 	
 }
