@@ -10,6 +10,7 @@
 //  
 
 import UIKit
+import Parse
 
 class LoginScreenViewController: UIViewController
 {
@@ -26,27 +27,26 @@ class LoginScreenViewController: UIViewController
         static let noMessage = "no"
     }
     
+    override func viewDidLoad() {
+        password.secureTextEntry = true
+    }
+    
     @IBAction func userLogin()
     {
         //loginSuccess = userinfo.testLogin(username.text,password:password.text)
         
-        if(loginSuccess)
-        {
-            loginState.text = Constants.yesMessage
-            loadDestinationVC()
-        }
-        else
-        {
-            loginState.text = Constants.noMessage
-        }
-    }
-    
-    //This is for the segue named "loginCorrect"
-    func loadDestinationVC()
-    {
-        if loginSuccess
-        {
-            self.performSegueWithIdentifier("loginCorrect", sender:nil)
+        PFUser.logInWithUsernameInBackground(username.text, password:password.text) {
+            (user: PFUser?, error: NSError?) -> Void in
+            println(user)
+            if user != nil {
+                // Do stuff after successful login.
+                self.loginState.text = Constants.yesMessage
+                self.performSegueWithIdentifier("loginCorrect", sender:self)
+            } else {
+                // The login failed. Check error to see why.
+                self.loginState.text = Constants.noMessage
+                println(error)
+            }
         }
     }
     

@@ -211,8 +211,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="passwordEntered" destination="hoR-54-0PT" id="t3c-Qa-EzE"/>
-                        <outlet property="usernameEntered" destination="S9a-SA-T7m" id="c4H-eR-3wj"/>
+                        <outlet property="password" destination="hoR-54-0PT" id="lhy-X0-qRt"/>
+                        <outlet property="username" destination="S9a-SA-T7m" id="1XV-PZ-Vda"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yy7-Lg-reM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -851,7 +851,6 @@
                                 </state>
                                 <connections>
                                     <action selector="userLogin" destination="ocP-iM-4Er" eventType="touchUpInside" id="UUi-HU-1ux"/>
-                                    <segue destination="CGz-Ci-XsY" kind="show" identifier="loginCorrect" id="XQq-ko-BlN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -874,6 +873,7 @@
                         <outlet property="loginState" destination="3MG-W7-7Tl" id="VJX-ht-Ztz"/>
                         <outlet property="password" destination="l9v-bo-KsO" id="Yqo-sW-Ilz"/>
                         <outlet property="username" destination="uMR-9C-koC" id="9Bh-oc-yiG"/>
+                        <segue destination="CGz-Ci-XsY" kind="show" identifier="loginCorrect" id="Oxp-6s-nJT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hf-bM-v0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1423,7 +1423,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Wtu-6b-cB1"/>
-        <segue reference="ikt-ZH-hp2"/>
+        <segue reference="8VB-iv-dy2"/>
+        <segue reference="Oxp-6s-nJT"/>
     </inferredMetricsTieBreakers>
 </document>

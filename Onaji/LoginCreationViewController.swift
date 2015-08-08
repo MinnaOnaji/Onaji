@@ -13,24 +13,32 @@ import Parse
 
 class LoginCreationViewController: UIViewController
 {
-    @IBOutlet weak var usernameEntered: UITextField!
+    @IBOutlet weak var username: UITextField!
 
-    @IBOutlet weak var passwordEntered: UITextField!
+    @IBOutlet weak var password: UITextField!
     
     //var userInfo = UserInfo()
     
     override func viewDidLoad() {
-        passwordEntered.secureTextEntry = true
+        password.secureTextEntry = true
     }
     
     @IBAction func createLogin()
     {
         //userInfo.addUser(usernameEntered.text, newPassword: passwordEntered.text)
         let account = PFUser()
-        account.username = usernameEntered.text
-        account.password = passwordEntered.text
+        account.username = username.text
+        account.password = password.text
         account.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            println("Account with username " + self.usernameEntered.text + " has been created successfully.")
+            if let error = error {
+                // Show the errorString somewhere and let the user try again.
+                let errorString = error.userInfo?["error"] as? NSString
+                println(error)
+            } else {
+                // Hooray! Let them use the app now.
+                println("Account with username " + self.username.text + " has been created successfully.")
+            }
+            
         }
     }
 	
