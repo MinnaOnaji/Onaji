@@ -29,6 +29,10 @@ class LoginCreationViewController: UIViewController
         let account = PFUser()
         account.username = username.text
         account.password = password.text
+        
+        //let userInfo = User(myUsername: username.text)
+        User().initiateUserValues(account)
+        
         account.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if let error = error {
                 // Show the errorString somewhere and let the user try again.

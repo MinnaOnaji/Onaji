@@ -13,6 +13,7 @@
 
 import Foundation
 import UIKit
+import Parse
 //import Keychain Matthew Li how does this work?
 
 /*
@@ -20,21 +21,17 @@ import UIKit
 */
 class User
 {
-    var username: String
-    var password: String
-    
-    var friends: [User] = []
-    //var picture: UIImage = nil
-    
-    var firstName: String = ""
-    var lastName: String = ""
-    var bio: String = ""
-    
-    //Implement other settings here
-    
-    init(myUsername: String, myPassword: String)
+    func initiateUserValues(user: PFUser)
     {
-        username = myUsername
-        password = myPassword
+        let firstName = ""
+        let lastName = ""
+        let email = ""
+        let bio = ""
+        
+        user.setObject(firstName, forKey: "FirstName")
+        user.setObject(lastName, forKey: "LastName")
+        user.setObject(email, forKey: "Email")
+        user.setObject(bio, forKey: "Biography")
     }
 }
+

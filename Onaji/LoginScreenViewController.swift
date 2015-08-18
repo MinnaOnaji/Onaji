@@ -40,6 +40,10 @@ class LoginScreenViewController: UIViewController
             println(user)
             if user != nil {
                 // Do stuff after successful login.
+                
+//                let userTest = user!.objectForKey("Biography") as! String
+//                println(userTest)
+                
                 self.loginState.text = Constants.yesMessage
                 self.performSegueWithIdentifier("loginCorrect", sender:self)
             } else {
