@@ -37,12 +37,11 @@ class LoginScreenViewController: UIViewController
         
         PFUser.logInWithUsernameInBackground(username.text, password:password.text) {
             (user: PFUser?, error: NSError?) -> Void in
-            println(user)
+
             if user != nil {
-                // Do stuff after successful login.
                 
-//                let userTest = user!.objectForKey("Biography") as! String
-//                println(userTest)
+                
+                //UserInformation.getUserInformation(forUser: user!)
                 
                 self.loginState.text = Constants.yesMessage
                 self.performSegueWithIdentifier("loginCorrect", sender:self)

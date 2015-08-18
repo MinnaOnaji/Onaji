@@ -10,7 +10,7 @@ import UIKit
 
 class FriendViewController: UIViewController
 {
-    var friends = [[User]]()
+//    var friends = [[User]]()
     //retrieve friends from database
     
 	//get list of friends

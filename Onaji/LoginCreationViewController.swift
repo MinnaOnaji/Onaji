@@ -31,7 +31,6 @@ class LoginCreationViewController: UIViewController
         account.password = password.text
         
         //let userInfo = User(myUsername: username.text)
-        User().initiateUserValues(account)
         
         account.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if let error = error {
@@ -39,6 +38,10 @@ class LoginCreationViewController: UIViewController
                 let errorString = error.userInfo?["error"] as? NSString
                 println(error)
             } else {
+                
+                var currentUserInfo = UserInformation()
+                currentUserInfo.instantiateUser(account)
+                // println( currentUserInfo)
                 // Hooray! Let them use the app now.
                 println("Account with username " + self.username.text + " has been created successfully.")
             }
