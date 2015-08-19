@@ -40,8 +40,19 @@ class LoginScreenViewController: UIViewController
 
             if user != nil {
                 
+                // how to access UserInformation
+                let query = UserInformation.query()!
+                query.whereKey("username", equalTo: user!.username!)
                 
-                //UserInformation.getUserInformation(forUser: user!)
+                query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+                    if error == nil {
+                        
+                        if let objects = objects as? [UserInformation], userInfo = objects.first {
+                            // userInfo is UserInformation for current user
+                            println(userInfo)
+                        }
+                    }
+                }
                 
                 self.loginState.text = Constants.yesMessage
                 self.performSegueWithIdentifier("loginCorrect", sender:self)

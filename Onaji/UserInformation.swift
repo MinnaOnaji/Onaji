@@ -40,7 +40,7 @@ class UserInformation : PFObject, PFSubclassing
         self.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
-                println(self)
+                // println(self)
                 // The object has been saved.
             } else {
                 // There was a problem, check error.description
@@ -48,25 +48,6 @@ class UserInformation : PFObject, PFSubclassing
             }
         }
     }
-    
-//    static func getUserInformation(forUser user: PFUser) -> UserInformation?
-//    {
-//        let query = UserInformation.query()!
-//        query.whereKey("user", equalTo: user)
-//        
-//        var foundUserInfo : UserInformation
-//        
-//        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-//            if error == nil {
-//                
-//                if let objects = objects as? [UserInformation], userInfo = objects.first {
-//                    foundUserInfo = userInfo
-//                }
-//            }
-//        }
-//        
-//        return foundUserInfo
-//    }
     
     // adds friends based on username, puts each others UserInformation into respective friends lists
     func addFriend(forUserName username: String)
@@ -77,9 +58,28 @@ class UserInformation : PFObject, PFSubclassing
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             if error == nil {
                 
-                if let objects = objects as? [UserInformation], friendUserInfo = objects.first {
-                    self.friends.append(friendUserInfo)
-                    friendUserInfo.friends.append(self)
+                if let objects = objects as? [UserInformation], friendUserInfo = objects.first
+                {
+                    var alreadyFriend = false
+                    for previousFriend in self.friends {
+                        if previousFriend.objectId! == friendUserInfo.objectId! {
+                            alreadyFriend = true
+                        }
+                    }
+                    
+                    if alreadyFriend {
+                        println("friend is already added")
+                    }
+                    else
+                    {
+                        self.friends.append(friendUserInfo)
+                        friendUserInfo.friends.append(self)
+                        
+                        self.saveUserInfo()
+                        friendUserInfo.saveUserInfo()
+                        
+                        println(friendUserInfo.username + " is now " + self.username + "'s friend.")
+                    }
                 }
             }
         }
