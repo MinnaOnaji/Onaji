@@ -41,7 +41,7 @@ class LoginScreenViewController: UIViewController
             if user != nil {
                 
                 // how to access UserInformation
-                let query = UserInformation.query()!
+                let query = PFUser.query()!
                 query.whereKey("username", equalTo: user!.username!)
                 
                 query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
