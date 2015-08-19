@@ -10,22 +10,17 @@ import Foundation
 import UIKit
 import Parse
 
-class UserInformation : PFObject, PFSubclassing
+class UserInformation : PFUser, PFSubclassing
 {
     // user information properties
-    @NSManaged var user: PFUser
     @NSManaged var friends: [UserInformation]
     @NSManaged var firstName: String
     @NSManaged var lastName: String
     @NSManaged var biography: String
-    @NSManaged var username: String
-    
     
     // instantiates userinformation by setting all properties as blank
     func instantiateUser(user: PFUser)
     {
-        self.user = user
-        self.username = user.username!
         self.friends = [UserInformation]()
         self.firstName = ""
         self.lastName = ""
@@ -35,14 +30,17 @@ class UserInformation : PFObject, PFSubclassing
     }
     
     // saves information of user into parse cloud
-    func saveUserInfo() {
-        
+    func saveUserInfo()
+	{
         self.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
-            if (success) {
+            if (success)
+			{
                 // println(self)
                 // The object has been saved.
-            } else {
+            }
+			else
+			{
                 // There was a problem, check error.description
                 println(error!.description)
             }
@@ -56,13 +54,15 @@ class UserInformation : PFObject, PFSubclassing
         query.whereKey("username", equalTo: username)
         
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-            if error == nil {
-                
+            if error == nil
+			{
                 if let objects = objects as? [UserInformation], friendUserInfo = objects.first
                 {
                     var alreadyFriend = false
-                    for previousFriend in self.friends {
-                        if previousFriend.objectId! == friendUserInfo.objectId! {
+                    for previousFriend in self.friends
+					{
+                        if previousFriend.objectId! == friendUserInfo.objectId!
+						{
                             alreadyFriend = true
                         }
                     }
@@ -78,22 +78,22 @@ class UserInformation : PFObject, PFSubclassing
                         self.saveUserInfo()
                         friendUserInfo.saveUserInfo()
                         
-                        println(friendUserInfo.username + " is now " + self.username + "'s friend.")
+                        println(friendUserInfo.username! + " is now " + self.username! + "'s friend.")
                     }
                 }
             }
         }
     }
     
-    static func parseClassName() -> String {
-        return "UserInformation"
-    }
-    
-    override class func initialize() {
-        struct Static {
+    override class func initialize()
+	{
+        struct Static
+		{
             static var onceToken : dispatch_once_t = 0;
         }
-        dispatch_once(&Static.onceToken) {
+		
+        dispatch_once(&Static.onceToken)
+		{
             self.registerSubclass()
         }
     }

@@ -38,19 +38,31 @@ class PreliminarySettingsViewController: SettingsViewController, UIPickerViewDat
 	
 	func save()
 	{
-		//Saves to the database
-		if let newAccount = PFUser.currentUser()
+		if let user = PFUser.currentUser()
 		{
-			newAccount["firstName"] = firstNameTextField.text!
-			newAccount["lastName"] = lastNameTextField.text!
-			newAccount["email"] = emailTextField.text!
-			newAccount["address"] = streetAddressTextField.text!
-			newAccount["state"] = selectedState
-			newAccount["zipCode"] = zipCodeTextField.text!
+			user["firstName"] = self.firstNameTextField.text!
+			user["lastName"] = self.lastNameTextField.text!
+			user["email"] = self.emailTextField.text!
+			user["address"] = self.streetAddressTextField.text!
+			user["state"] = self.selectedState
+			user["zipCode"] = self.zipCodeTextField.text!
 		}
 		else
 		{
 			println("No one logged in")
+		}
+		//Saves to the database
+		PFUser.currentUser()!.saveInBackgroundWithBlock {(success: Bool, error: NSError?)-> Void in
+			if let error = error
+			{
+				// Show the errorString somewhere and let the user try again.
+				let errorString = error.userInfo?["error"] as? NSString
+				println(error)
+			}
+			else
+			{
+				println("saved")
+			}
 		}
 	}
 	

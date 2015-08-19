@@ -25,27 +25,22 @@ class LoginCreationViewController: UIViewController
     
     @IBAction func createLogin()
     {
-        //userInfo.addUser(usernameEntered.text, newPassword: passwordEntered.text)
-        let account = PFUser()
+        let account = UserInformation()
         account.username = username.text
         account.password = password.text
-        
-        //let userInfo = User(myUsername: username.text)
-        
-        account.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if let error = error {
+		
+		account.signUpInBackgroundWithBlock {(success: Bool, error: NSError?) -> Void in
+            if let error = error
+			{
                 // Show the errorString somewhere and let the user try again.
                 let errorString = error.userInfo?["error"] as? NSString
                 println(error)
-            } else {
-                
-                var currentUserInfo = UserInformation()
-                currentUserInfo.instantiateUser(account)
-                // println( currentUserInfo)
+            }
+			else
+			{
                 // Hooray! Let them use the app now.
                 println("Account with username " + self.username.text + " has been created successfully.")
             }
-            
         }
     }
 	
