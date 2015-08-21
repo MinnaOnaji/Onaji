@@ -8,14 +8,14 @@
 
 import UIKit
 
-class GeneralSettingsViewController: SettingsViewController
+class GeneralSettingsViewController: UIViewController
 {
 	@IBOutlet weak var oldPasswordTextField: UITextField!
 	@IBOutlet weak var newPasswordTextField: UITextField!
 	@IBOutlet weak var confirmPasswordTextField: UITextField!
 	@IBOutlet weak var newEmailTextField: UITextField!
-	
-	@IBAction func saveClicked(sender: UIButton)
+
+	@IBAction func saveClicked(sender: UIBarButtonItem)
 	{
 		//Checks that old password is correct
 		//Checks new and confirm password match
@@ -30,4 +30,6 @@ class GeneralSettingsViewController: SettingsViewController
 	{
 		//Checks that new and confirm password match
 	}
+	
+	
 }

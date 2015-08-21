@@ -483,15 +483,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJi-5b-d6i">
-                                <rect key="frame" x="250" y="513" width="100" height="30"/>
-                                <state key="normal" title="Save Changes">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveClicked:" destination="vma-op-AnE" eventType="touchUpInside" id="Tq0-dr-RoF"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21s-oU-6kd">
                                 <rect key="frame" x="16" y="72" width="568" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -617,7 +608,6 @@
                             <constraint firstItem="P6h-7L-eTW" firstAttribute="top" secondItem="boc-Si-spz" secondAttribute="bottom" constant="8" id="DbZ-8G-0Fu"/>
                             <constraint firstItem="21s-oU-6kd" firstAttribute="trailing" secondItem="Och-R4-N2B" secondAttribute="trailingMargin" id="EbP-W8-MI0"/>
                             <constraint firstItem="OPe-kd-kVJ" firstAttribute="leading" secondItem="Och-R4-N2B" secondAttribute="leadingMargin" id="Eod-zs-ybA"/>
-                            <constraint firstAttribute="centerX" secondItem="FJi-5b-d6i" secondAttribute="centerX" id="Fe8-h8-xiP"/>
                             <constraint firstItem="tiI-i5-ac7" firstAttribute="leading" secondItem="Och-R4-N2B" secondAttribute="leadingMargin" id="M93-ca-QRO"/>
                             <constraint firstItem="boc-Si-spz" firstAttribute="trailing" secondItem="Och-R4-N2B" secondAttribute="trailingMargin" id="N5w-ls-lam"/>
                             <constraint firstItem="P6h-7L-eTW" firstAttribute="leading" secondItem="Och-R4-N2B" secondAttribute="leadingMargin" id="Nun-Fc-KJK"/>
@@ -625,13 +615,24 @@
                             <constraint firstItem="emg-TO-G6c" firstAttribute="trailing" secondItem="Och-R4-N2B" secondAttribute="trailingMargin" id="UYf-Lw-gUp"/>
                             <constraint firstItem="OPe-kd-kVJ" firstAttribute="top" secondItem="21s-oU-6kd" secondAttribute="bottom" constant="8" id="aOa-w7-KSv"/>
                             <constraint firstItem="boc-Si-spz" firstAttribute="top" secondItem="OPe-kd-kVJ" secondAttribute="bottom" constant="7.5" id="cBL-dz-CPB"/>
-                            <constraint firstItem="Wb9-Ow-s5v" firstAttribute="top" secondItem="FJi-5b-d6i" secondAttribute="bottom" constant="8" id="ezM-xe-ULH"/>
                             <constraint firstItem="P6h-7L-eTW" firstAttribute="trailing" secondItem="Och-R4-N2B" secondAttribute="trailingMargin" id="gjo-fK-RSu"/>
                             <constraint firstItem="tiI-i5-ac7" firstAttribute="top" secondItem="P6h-7L-eTW" secondAttribute="bottom" constant="8" id="mUM-jD-2MO"/>
                             <constraint firstItem="emg-TO-G6c" firstAttribute="top" secondItem="tiI-i5-ac7" secondAttribute="bottom" constant="7.5" id="msH-GV-CCp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="General" id="lnS-sd-AJd"/>
+                    <navigationItem key="navigationItem" title="General" id="lnS-sd-AJd">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Ao8-qb-1oH">
+                            <connections>
+                                <segue destination="6Q8-a1-LdW" kind="unwind" unwindAction="unwindSegue:" id="Gra-zh-fHb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="gf1-rc-2jf">
+                            <connections>
+                                <action selector="saveClicked:" destination="vma-op-AnE" id="Z3b-yz-rLJ"/>
+                                <segue destination="6Q8-a1-LdW" kind="unwind" unwindAction="unwindSegue:" id="Cpl-UT-pZV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="yFD-D5-cfu" id="unD-SO-dgI"/>
                         <outlet property="newEmailTextField" destination="ROT-ee-kFe" id="vC4-eH-COx"/>
@@ -640,6 +641,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zg5-lc-AwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6Q8-a1-LdW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4511" y="839"/>
         </scene>
@@ -733,15 +735,6 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5e-7C-4rg">
                                 <rect key="frame" x="16" y="176" width="568" height="162"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTf-hN-cIe">
-                                <rect key="frame" x="250" y="513" width="100" height="30"/>
-                                <state key="normal" title="Save Changes">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveClicked:" destination="Dpv-Ew-qDr" eventType="touchUpInside" id="kwx-mr-pJb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -753,11 +746,9 @@
                             <constraint firstItem="a1N-rD-fif" firstAttribute="top" secondItem="JOK-Y2-fDG" secondAttribute="bottom" constant="8" id="E8g-Id-uKJ"/>
                             <constraint firstItem="Dyg-b2-yup" firstAttribute="top" secondItem="i5e-7C-4rg" secondAttribute="bottom" constant="8" symbolic="YES" id="LxW-w0-5LW"/>
                             <constraint firstItem="Dyg-b2-yup" firstAttribute="trailing" secondItem="nxw-2f-6ch" secondAttribute="trailingMargin" id="VOE-WN-bAE"/>
-                            <constraint firstItem="OoU-e1-DuX" firstAttribute="top" secondItem="eTf-hN-cIe" secondAttribute="bottom" constant="8" symbolic="YES" id="VT9-tH-X3m"/>
                             <constraint firstItem="i5e-7C-4rg" firstAttribute="trailing" secondItem="nxw-2f-6ch" secondAttribute="trailingMargin" id="baM-J2-I4I"/>
                             <constraint firstItem="Dyg-b2-yup" firstAttribute="leading" secondItem="nxw-2f-6ch" secondAttribute="leadingMargin" id="biU-w7-hIi"/>
                             <constraint firstItem="a1N-rD-fif" firstAttribute="trailing" secondItem="nxw-2f-6ch" secondAttribute="trailingMargin" id="bzc-ck-OQI"/>
-                            <constraint firstAttribute="centerX" secondItem="eTf-hN-cIe" secondAttribute="centerX" id="oL0-am-MwU"/>
                             <constraint firstItem="EJd-zK-wIi" firstAttribute="top" secondItem="Gr1-xL-hkH" secondAttribute="bottom" constant="8" id="pa2-Rt-8zZ"/>
                             <constraint firstItem="i5e-7C-4rg" firstAttribute="leading" secondItem="nxw-2f-6ch" secondAttribute="leadingMargin" id="rPO-U7-jfu"/>
                             <constraint firstItem="a1N-rD-fif" firstAttribute="height" secondItem="JOK-Y2-fDG" secondAttribute="height" id="rQ8-al-Cfy"/>
@@ -765,7 +756,19 @@
                             <constraint firstItem="EJd-zK-wIi" firstAttribute="trailing" secondItem="nxw-2f-6ch" secondAttribute="trailingMargin" id="uDY-fe-ZZj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="sm5-m9-UoM"/>
+                    <navigationItem key="navigationItem" title="Profile" id="sm5-m9-UoM">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="cY9-JD-FWJ">
+                            <connections>
+                                <segue destination="bWl-n2-0WU" kind="unwind" unwindAction="unwindSegue:" id="aFV-gU-2pR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="lHd-xP-LnA">
+                            <connections>
+                                <action selector="saveClicked:" destination="Dpv-Ew-qDr" id="1TI-yR-o31"/>
+                                <segue destination="bWl-n2-0WU" kind="unwind" unwindAction="unwindSegue:" id="vor-1t-Eji"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="statePicker" destination="i5e-7C-4rg" id="ZQ9-OG-h3o"/>
                         <outlet property="streetAddressTextField" destination="fcb-HC-qxW" id="TVN-xg-mmZ"/>
@@ -773,6 +776,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eq0-yL-itd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bWl-n2-0WU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3768" y="1143"/>
         </scene>
@@ -890,10 +894,10 @@
             </objects>
             <point key="canvasLocation" x="896" y="69"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="xkb-vG-Qx4">
             <objects>
-                <tabBarController id="CGz-Ci-XsY" sceneMemberID="viewController">
+                <tabBarController id="CGz-Ci-XsY" customClass="MainTabBarViewController" customModule="Onaji" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="cFP-sT-wDb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -1011,7 +1015,7 @@
             </objects>
             <point key="canvasLocation" x="1632" y="1159"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Settings-->
         <scene sceneID="6BL-Td-YOd">
             <objects>
                 <tableViewController id="8MR-q7-e2k" customClass="SettingsTableViewController" customModule="Onaji" customModuleProvider="target" sceneMemberID="viewController">
@@ -1081,11 +1085,16 @@
                             <outlet property="delegate" destination="8MR-q7-e2k" id="A8Z-zT-XtL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="7Sd-1K-bOb">
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="KpF-pQ-l7d"/>
+                    <navigationItem key="navigationItem" title="Settings" id="7Sd-1K-bOb">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="KpF-pQ-l7d">
+                            <connections>
+                                <segue destination="f2o-la-naH" kind="unwind" unwindAction="unwindSegue:" id="gq6-ag-9cT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Js-gg-6bO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="f2o-la-naH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3768" y="449"/>
         </scene>
@@ -1434,6 +1443,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Wtu-6b-cB1"/>
-        <segue reference="8VB-iv-dy2"/>
+        <segue reference="ikt-ZH-hp2"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class PreliminarySettingsViewController: SettingsViewController, UIPickerViewDataSource, UIPickerViewDelegate
+class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
 {
 	@IBOutlet weak var firstNameTextField: UITextField!
 	@IBOutlet weak var lastNameTextField: UITextField!

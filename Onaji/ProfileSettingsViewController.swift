@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ProfileSettingsViewController: SettingsViewController
+class ProfileSettingsViewController: UIViewController
 {
 	@IBOutlet weak var streetAddressTextField: UITextField!
 	@IBOutlet weak var statePicker: UIPickerView!
 	@IBOutlet weak var zipCodeTextField: UITextField!
 	
-	@IBAction func saveClicked(sender: UIButton)
+	@IBAction func saveClicked(sender: UIBarButtonItem)
 	{
 		//Save the changes and send to database
 	}
