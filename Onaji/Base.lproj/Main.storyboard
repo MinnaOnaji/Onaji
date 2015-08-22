@@ -623,13 +623,12 @@
                     <navigationItem key="navigationItem" title="General" id="lnS-sd-AJd">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="Ao8-qb-1oH">
                             <connections>
-                                <segue destination="6Q8-a1-LdW" kind="unwind" unwindAction="unwindSegue:" id="Gra-zh-fHb"/>
+                                <segue destination="6Q8-a1-LdW" kind="unwind" unwindAction="unwindSegue:" id="Ufr-UA-1qL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="gf1-rc-2jf">
                             <connections>
-                                <action selector="saveClicked:" destination="vma-op-AnE" id="Z3b-yz-rLJ"/>
-                                <segue destination="6Q8-a1-LdW" kind="unwind" unwindAction="unwindSegue:" id="Cpl-UT-pZV"/>
+                                <segue destination="6Q8-a1-LdW" kind="unwind" identifier="saveUnwind" unwindAction="unwindSegue:" id="Cpl-UT-pZV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
