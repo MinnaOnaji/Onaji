@@ -13,22 +13,26 @@ import Parse
 class UserInformation : PFUser, PFSubclassing
 {
     // user information properties
-    @NSManaged var friends: [UserInformation]
     @NSManaged var firstName: String
     @NSManaged var lastName: String
+	@NSManaged var birthday: String
+	@NSManaged var address: String
+	@NSManaged var state: String
+	@NSManaged var zipCode: String
+	@NSManaged var friends: [UserInformation]
     @NSManaged var biography: String
     
     // instantiates userinformation by setting all properties as blank
-    func instantiateUser()
-    {
-        self.friends = [UserInformation]()
-        self.firstName = ""
-        self.lastName = ""
-        self.biography = ""
-        
-        self.save()
-    }
-    
+//    func instantiateUser()
+//    {
+//        self.firstName = ""
+//        self.lastName = ""
+//		self.friends = [UserInformation]()
+//        self.biography = ""
+//        
+//        self.save()
+//    }
+	
     // adds friends based on username, puts each others UserInformation into respective friends lists
     func addFriend(forUserName username: String)
     {

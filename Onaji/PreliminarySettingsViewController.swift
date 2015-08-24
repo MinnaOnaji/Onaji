@@ -38,7 +38,7 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 	
 	func save()
 	{
-		if let user = PFUser.currentUser()
+		if let user = UserInformation.currentUser()
 		{
 			user["firstName"] = self.firstNameTextField.text!
 			user["lastName"] = self.lastNameTextField.text!
@@ -62,6 +62,7 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 			else
 			{
 				println("saved")
+				println(UserInformation.currentUser())
 			}
 		}
 	}

@@ -34,6 +34,10 @@ class GeneralSettingsViewController: UIViewController
 				let errorString = error.userInfo?["error"] as? NSString
 				println(error)
 			}
+			else
+			{
+				println(UserInformation.currentUser())
+			}
 		}
 	}
 	
