@@ -41,12 +41,12 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 	{
 		if let user = UserInformation.currentUser()
 		{
-			user["firstName"] = self.firstNameTextField.text!
-			user["lastName"] = self.lastNameTextField.text!
-			user["email"] = self.emailTextField.text!
-			user["address"] = self.streetAddressTextField.text!
-			user["state"] = self.selectedState
-			user["zipCode"] = self.zipCodeTextField.text!
+            user.firstName = self.firstNameTextField.text!
+			user.lastName = self.lastNameTextField.text!
+			user.email = self.emailTextField.text!
+			user.address = self.streetAddressTextField.text!
+//			user.state = self.selectedState
+			user.zipCode = self.zipCodeTextField.text!
 		}
 		else
 		{
