@@ -29,20 +29,6 @@ class UserInformation : PFUser, PFSubclassing
         self.save()
     }
     
-    func saveUserInfo() {
-        
-        self.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                // println(self)
-                // The object has been saved.
-            } else {
-                // There was a problem, check error.description
-                println(error!.description)
-            }
-        }
-    }
-    
     // adds friends based on username, puts each others UserInformation into respective friends lists
     func addFriend(forUserName username: String)
     {
