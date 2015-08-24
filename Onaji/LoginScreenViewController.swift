@@ -41,7 +41,7 @@ class LoginScreenViewController: UIViewController
             if user != nil {
                 let userInfo = UserInformation.currentUser()!
 
-                userInfo.addFriend(forUserName: "testing4")
+                //userInfo.addFriend(forUserName: "testing4")
                 println(userInfo)
                 
                 self.loginState.text = Constants.yesMessage
