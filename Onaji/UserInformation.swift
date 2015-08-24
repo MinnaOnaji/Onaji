@@ -29,23 +29,19 @@ class UserInformation : PFUser, PFSubclassing
         self.save()
     }
     
-    // saves information of user into parse cloud
-//    func saveUserInfo()
-//	{
-//        self.saveInBackgroundWithBlock {
-//            (success: Bool, error: NSError?) -> Void in
-//            if (success)
-//			{
-//                // println(self)
-//                // The object has been saved.
-//            }
-//			else
-//			{
-//                // There was a problem, check error.description
-//                println(error!.description)
-//            }
-//        }
-//    }
+    func saveUserInfo() {
+        
+        self.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                // println(self)
+                // The object has been saved.
+            } else {
+                // There was a problem, check error.description
+                println(error!.description)
+            }
+        }
+    }
     
     // adds friends based on username, puts each others UserInformation into respective friends lists
     func addFriend(forUserName username: String)
@@ -58,6 +54,7 @@ class UserInformation : PFUser, PFSubclassing
 			{
                 if let objects = objects as? [UserInformation], friendUserInfo = objects.first
                 {
+                    
                     var alreadyFriend = false
                     for previousFriend in self.friends
 					{
@@ -73,10 +70,7 @@ class UserInformation : PFUser, PFSubclassing
                     else
                     {
                         self.friends.append(friendUserInfo)
-                        friendUserInfo.friends.append(self)
-                        
                         self.save()
-                        friendUserInfo.save()
                         
                         println(friendUserInfo.username! + " is now " + self.username! + "'s friend.")
                     }

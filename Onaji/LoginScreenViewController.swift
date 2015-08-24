@@ -39,11 +39,14 @@ class LoginScreenViewController: UIViewController
             (user: PFUser?, error: NSError?) -> Void in
 
             if user != nil {
-                let userInfo = UserInformation.currentUser()
+                let userInfo = UserInformation.currentUser()!
+
+                userInfo.addFriend(forUserName: "testing4")
                 println(userInfo)
                 
                 self.loginState.text = Constants.yesMessage
                 self.performSegueWithIdentifier("loginCorrect", sender:self)
+                
             } else {
                 // The login failed. Check error to see why.
                 self.loginState.text = Constants.noMessage
