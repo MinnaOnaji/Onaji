@@ -35,24 +35,12 @@ class LoginScreenViewController: UIViewController
     {
         //loginSuccess = userinfo.testLogin(username.text,password:password.text)
         
-        PFUser.logInWithUsernameInBackground(username.text, password:password.text) {
+        UserInformation.logInWithUsernameInBackground(username.text, password:password.text) {
             (user: PFUser?, error: NSError?) -> Void in
 
             if user != nil {
-                
-                // how to access UserInformation
-                let query = PFUser.query()!
-                query.whereKey("username", equalTo: user!.username!)
-                
-                query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-                    if error == nil {
-                        
-                        if let objects = objects as? [UserInformation], userInfo = objects.first {
-                            // userInfo is UserInformation for current user
-                            println(userInfo)
-                        }
-                    }
-                }
+                let userInfo = UserInformation.currentUser()
+                println(userInfo)
                 
                 self.loginState.text = Constants.yesMessage
                 self.performSegueWithIdentifier("loginCorrect", sender:self)

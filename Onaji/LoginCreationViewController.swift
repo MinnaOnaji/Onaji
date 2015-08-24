@@ -38,6 +38,7 @@ class LoginCreationViewController: UIViewController
             }
 			else
 			{
+                account.instantiateUser()
                 // Hooray! Let them use the app now.
                 println("Account with username " + self.username.text + " has been created successfully.")
             }
