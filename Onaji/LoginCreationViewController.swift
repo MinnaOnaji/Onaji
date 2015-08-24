@@ -25,7 +25,7 @@ class LoginCreationViewController: UIViewController
     
     @IBAction func createLogin()
     {
-        let account = PFUser()
+        let account = UserInformation()
         account.username = username.text
         account.password = password.text
 		
