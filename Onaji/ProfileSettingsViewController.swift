@@ -16,7 +16,7 @@ class ProfileSettingsViewController: UIViewController, UIPickerViewDataSource, U
 	
 	var selectedState: String!
 	
-	let pickerData = ["Select one","Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+	var pickerData = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 	
 	@IBAction func saveClicked(sender: UIBarButtonItem)
 	{
@@ -26,7 +26,45 @@ class ProfileSettingsViewController: UIViewController, UIPickerViewDataSource, U
 	override func viewDidLoad()
 	{
 		super.viewDidLoad()
+		statePicker.dataSource = self
+		statePicker.delegate = self
+		
 		//Retrieve old info from database and display
+		if let address = UserInformation.currentUser()?.address
+		{
+			streetAddressTextField.text = address
+		}
+		else
+		{
+			println("no current address")
+		}
+		
+//		if let currentState = UserInformation.currentUser()?.state
+//		{
+//			for var i = 0; i < pickerData.count; i++
+//			{
+//				if pickerData[i] == currentState
+//				{
+//					pickerData.removeAtIndex(i)
+//					break
+//				}
+//			}
+//			pickerData.insert(currentState, atIndex: 0)
+//			statePicker.selectRow(0, inComponent: 1, animated: true)
+//		}
+//		else
+//		{
+//			println("no current state")
+//		}
+		
+		if let zipCode = UserInformation.currentUser()?.zipCode
+		{
+			zipCodeTextField.text = zipCode
+		}
+		else
+		{
+			println("no zip code value")
+		}
 	}
 	
 	//MARK: - Delegates and data sources

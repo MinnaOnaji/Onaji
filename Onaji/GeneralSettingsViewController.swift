@@ -25,9 +25,9 @@ class GeneralSettingsViewController: UIViewController
 //		{
 //			PFUser.currentUser()?.password = newPasswordTextField.text
 //		}
-		PFUser.currentUser()?.password = newPasswordTextField.text
-		PFUser.currentUser()?.email = newEmailTextField.text
-		PFUser.currentUser()?.saveInBackgroundWithBlock {(success: Bool, error: NSError?) -> Void in
+		UserInformation.currentUser()?.password = newPasswordTextField.text
+		UserInformation.currentUser()?.email = newEmailTextField.text
+		UserInformation.currentUser()?.saveInBackgroundWithBlock {(success: Bool, error: NSError?) -> Void in
 			if let error = error
 			{
 				// Show the errorString somewhere and let the user try again.
@@ -46,7 +46,7 @@ class GeneralSettingsViewController: UIViewController
 		oldPasswordTextField.secureTextEntry = true
 		newPasswordTextField.secureTextEntry = true
 		confirmPasswordTextField.secureTextEntry = true
-		newEmailTextField.text = PFUser.currentUser()?.email
+		newEmailTextField.text = UserInformation.currentUser()?.email
 	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
