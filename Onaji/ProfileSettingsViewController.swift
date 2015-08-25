@@ -50,7 +50,7 @@ class ProfileSettingsViewController: UIViewController, UIPickerViewDataSource, U
 //				}
 //			}
 //			pickerData.insert(currentState, atIndex: 0)
-//			statePicker.selectRow(0, inComponent: 1, animated: true)
+//			statePicker.selectRow(0, inComponent: 0, animated: true)
 //		}
 //		else
 //		{

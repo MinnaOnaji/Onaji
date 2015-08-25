@@ -19,7 +19,7 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 	@IBOutlet weak var statePicker: UIPickerView!
 	@IBOutlet weak var zipCodeTextField: UITextField!
 	
-	var selectedState: String!
+	var selectedState: String?
 	
 	let pickerData = ["Select one","Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 	
@@ -45,7 +45,7 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 			user.lastName = self.lastNameTextField.text!
 			user.email = self.emailTextField.text!
 			user.address = self.streetAddressTextField.text!
-//			user.state = self.selectedState
+			//user.state = self.selectedState!
 			user.zipCode = self.zipCodeTextField.text!
 		}
 		else
@@ -53,7 +53,7 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 			println("No one logged in")
 		}
 		//Saves to the database
-		PFUser.currentUser()!.saveInBackgroundWithBlock {(success: Bool, error: NSError?)-> Void in
+		UserInformation.currentUser()!.saveInBackgroundWithBlock {(success: Bool, error: NSError?)-> Void in
 			if let error = error
 			{
 				// Show the errorString somewhere and let the user try again.

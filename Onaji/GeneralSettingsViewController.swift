@@ -23,7 +23,7 @@ class GeneralSettingsViewController: UIViewController
 		//Checks new and confirm password match
 //		if newPasswordsMatch() && oldPasswordMatch()
 //		{
-//			PFUser.currentUser()?.password = newPasswordTextField.text
+//			UserInformation.currentUser()?.password = newPasswordTextField.text
 //		}
 		UserInformation.currentUser()?.password = newPasswordTextField.text
 		UserInformation.currentUser()?.email = newEmailTextField.text
@@ -63,7 +63,7 @@ class GeneralSettingsViewController: UIViewController
 		if let password = oldPasswordTextField.text
 		{
 			//HELP HERE
-			if password == PFUser.currentUser()?.password!
+			if password == UserInformation.currentUser()?.password!
 			{
 				println("Password correct")
 				return true
