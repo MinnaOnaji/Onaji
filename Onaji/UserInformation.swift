@@ -21,17 +21,8 @@ class UserInformation : PFUser, PFSubclassing
 	@NSManaged var zipCode: String
 	@NSManaged var friends: [UserInformation]
     @NSManaged var biography: String
-    
-    // instantiates userinformation by setting all properties as blank
-//    func instantiateUser()
-//    {
-//        self.firstName = ""
-//        self.lastName = ""
-//		self.friends = [UserInformation]()
-//        self.biography = ""
-//        
-//        self.save()
-//    }
+    @NSManaged var subjects: [String]
+
 	
     // adds friends based on username, puts each others UserInformation into respective friends lists
     func addFriend(forUserName username: String)

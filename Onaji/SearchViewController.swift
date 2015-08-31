@@ -10,5 +10,22 @@ import UIKit
 
 class SearchViewController: UIViewController
 {
-	
+    func findTutorWithSubject(subject: String)
+    {
+        let query = UserInformation.query()!
+        query.whereKey("subjects", equalTo: subject)
+        
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil
+            {
+                if let objects = objects as? [UserInformation]
+                {
+                    for user in objects {
+                        println(user.username!)
+                        println(user.subjects)
+                    }
+                }
+            }
+        }
+    }
 }
