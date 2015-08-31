@@ -60,6 +60,16 @@ class UserInformation : PFUser, PFSubclassing
         }
     }
     
+    // adds a subject to tutor's liste of subjects
+    func addSubject(subject: String)
+    {
+        if subjects.count == 0 {
+            subjects = []
+        }
+        subjects.append(subject)
+        self.save()
+    }
+    
     override class func initialize()
 	{
         struct Static
