@@ -10,6 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController
 {
+    // prints out all UserInformations that has subject as one of their subjects
     func findTutorWithSubject(subject: String)
     {
         let query = UserInformation.query()!
@@ -20,6 +21,7 @@ class SearchViewController: UIViewController
             {
                 if let objects = objects as? [UserInformation]
                 {
+                    // objects is [UserInformation] that contains corresponding subject
                     for user in objects {
                         println(user.username!)
                         println(user.subjects)
