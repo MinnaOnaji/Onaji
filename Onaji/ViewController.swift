@@ -35,6 +35,11 @@ class ViewController: UIViewController
         // this is to test parallel changes on diff files
         // more testing
     }
+    
+    @IBAction func logoutSegue(segue: UIStoryboardSegue)
+    {
+        UserInformation.logOut()
+    }
 
 }
 

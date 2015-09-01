@@ -65,9 +65,4 @@ class LoginScreenViewController: UIViewController
         textField.resignFirstResponder()
         return true
     }
-	
-	@IBAction func logoutSegue(segue: UIStoryboardSegue)
-	{
-		UserInformation.logOut()
-	}
 }

@@ -771,8 +771,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="lHd-xP-LnA">
                             <connections>
-                                <action selector="saveClicked:" destination="Dpv-Ew-qDr" id="1TI-yR-o31"/>
-                                <segue destination="bWl-n2-0WU" kind="unwind" unwindAction="unwindSegue:" id="vor-1t-Eji"/>
+                                <segue destination="bWl-n2-0WU" kind="unwind" identifier="saveUnwind" unwindAction="unwindSegue:" id="vor-1t-Eji"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

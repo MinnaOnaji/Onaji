@@ -17,7 +17,7 @@ class UserInformation : PFUser, PFSubclassing
     @NSManaged var lastName: String
 	@NSManaged var birthday: String
 	@NSManaged var address: String
-	@NSManaged var state: String
+	@NSManaged var homeState: String
 	@NSManaged var zipCode: String
 	@NSManaged var friends: [UserInformation]
     @NSManaged var biography: String

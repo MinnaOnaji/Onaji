@@ -45,7 +45,7 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 			user.lastName = self.lastNameTextField.text!
 			user.email = self.emailTextField.text!
 			user.address = self.streetAddressTextField.text!
-			//user.state = self.selectedState!
+			user.homeState = self.selectedState!
 			user.zipCode = self.zipCodeTextField.text!
 		}
 		else
@@ -97,4 +97,16 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 	{
 		selectedState = pickerData[row]
 	}
+    
+    //MARK: - Keyboard stuff
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        if let touch = touches.first as? UITouch{
+            self.view.endEditing(true)
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
