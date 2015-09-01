@@ -8,13 +8,16 @@
 
 import UIKit
 
-class SearchViewController: UIViewController
+class SearchViewController: UIViewController, UISearchBarDelegate, UISearchDisplayDelegate
 {
+    var filteredTutors = [UserInformation]()
+    
     // prints out all UserInformations that has subject as one of their subjects
-    func findTutorWithSubject(subject: String)
+    func findTutorWithSubject(subject: String) -> [UserInformation]
     {
         let query = UserInformation.query()!
         query.whereKey("subjects", equalTo: subject)
+        var result = [UserInformation]()
         
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             if error == nil
@@ -25,9 +28,25 @@ class SearchViewController: UIViewController
                     for user in objects {
                         println(user.username!)
                         println(user.subjects)
+                        result.append(user)
                     }
                 }
             }
         }
+        
+        println(result)
+        return result
     }
+    
+    func filterContentForSearchText(searchText: String)
+    {
+        filteredTutors = findTutorWithSubject(searchText)
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar)
+    {
+        performSegueWithIdentifier("search", sender: searchBar)
+    }
+    
+    
 }

@@ -35,6 +35,7 @@
 		57D6C2431B75CAAD00CF13CB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D6C2371B75CAAD00CF13CB /* SystemConfiguration.framework */; };
 		57D6C2451B75CB6400CF13CB /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6C2441B75CB6400CF13CB /* Secret.swift */; };
 		6A42BF6B1B69E46D000C6B21 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A42BF6A1B69E46D000C6B21 /* SearchViewController.swift */; };
+		6A5616331B960BC000ABDA04 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5616321B960BC000ABDA04 /* SearchResultsViewController.swift */; };
 		6A9163DD1B879F4200C03C27 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9163DC1B879F4200C03C27 /* MainTabBarViewController.swift */; };
 		6A9C27F41B740E38009B06F8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9C27F31B740E38009B06F8 /* SettingsTableViewController.swift */; };
 		6A9C27F61B740F7F009B06F8 /* PreliminarySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9C27F51B740F7F009B06F8 /* PreliminarySettingsViewController.swift */; };
@@ -86,6 +87,7 @@
 		57D6C2371B75CAAD00CF13CB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		57D6C2441B75CB6400CF13CB /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		6A42BF6A1B69E46D000C6B21 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		6A5616321B960BC000ABDA04 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		6A9163DC1B879F4200C03C27 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		6A9C27F31B740E38009B06F8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6A9C27F51B740F7F009B06F8 /* PreliminarySettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreliminarySettingsViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				5759B4E41B76E20C00938105 /* HomeViewController.swift */,
 				5759B4E51B76E20C00938105 /* MessagesViewController.swift */,
 				3463A0731B5EF12C004C4103 /* Main.storyboard */,
+				6A5616321B960BC000ABDA04 /* SearchResultsViewController.swift */,
 				6A9163DC1B879F4200C03C27 /* MainTabBarViewController.swift */,
 				6A9C27F71B740FD3009B06F8 /* GeneralSettingsViewController.swift */,
 				6A9C27F91B740FF6009B06F8 /* ProfileSettingsViewController.swift */,
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A9C27F41B740E38009B06F8 /* SettingsTableViewController.swift in Sources */,
+				6A5616331B960BC000ABDA04 /* SearchResultsViewController.swift in Sources */,
 				5759B4E71B76E20C00938105 /* HomeViewController.swift in Sources */,
 				3463A0721B5EF12C004C4103 /* ViewController.swift in Sources */,
 				6A9163DD1B879F4200C03C27 /* MainTabBarViewController.swift in Sources */,

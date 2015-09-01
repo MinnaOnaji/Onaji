@@ -26,7 +26,7 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 	@IBAction func saveClicked(sender: UIButton)
 	{
 		// Checks to see if there is missing info, then saves
-		if firstNameTextField != nil && lastNameTextField != nil && emailTextField != nil && streetAddressTextField != nil && selectedState != nil && zipCodeTextField != nil
+		if firstNameTextField != nil && lastNameTextField != nil && emailTextField != nil && streetAddressTextField != nil && selectedState != nil && zipCodeTextField != nil && selectedState != pickerData[0]
 		{
 			save()
 			self.performSegueWithIdentifier("preliminarySave", sender:self)
