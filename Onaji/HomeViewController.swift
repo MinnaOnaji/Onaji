@@ -11,7 +11,34 @@
 
 import UIKit
 
-class HomeViewController: UIViewController
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
-    
+	@IBOutlet weak var homeTableView: UITableView!
+	
+	var items: [String] = ["1", "2", "3", "4", "5"]
+	
+	override func viewDidLoad()
+	{
+		super.viewDidLoad()
+		
+		self.homeTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "home")
+	}
+	
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return self.items.count;
+	}
+	
+	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+	{
+		var cell:UITableViewCell = self.homeTableView.dequeueReusableCellWithIdentifier("home") as! UITableViewCell
+		
+		cell.textLabel?.text = self.items[indexPath.row]
+		
+		return cell
+	}
+	
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+	{
+		println("You selected cell #\(indexPath.row)!")
+	}
 }
