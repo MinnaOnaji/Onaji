@@ -1464,6 +1464,9 @@
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="g7v-5R-PRy" kind="unwind" unwindAction="returnToSearchPage:" id="8LV-0L-qNl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1486,6 +1489,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyW-UT-4ZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="g7v-5R-PRy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3090" y="-251"/>
         </scene>
