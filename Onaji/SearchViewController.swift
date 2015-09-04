@@ -8,10 +8,11 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate, UISearchDisplayDelegate
+class SearchViewController: UIViewController
 {
     var filteredTutors = [UserInformation]()
-    
+	@IBOutlet weak var searchBar: UISearchBar!
+	
     // prints out all UserInformations that has subject as one of their subjects
     func findTutorWithSubject(subject: String) -> [UserInformation]
     {

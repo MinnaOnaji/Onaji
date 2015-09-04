@@ -10,6 +10,35 @@ import UIKit
 
 class FriendViewController: UIViewController
 {
+	@IBOutlet weak var friendTableView: UITableView!
+	
+	var items: [String] = ["1", "2", "3", "4", "5"]
+	
+	override func viewDidLoad()
+	{
+		super.viewDidLoad()
+		
+		self.friendTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "friends")
+	}
+	
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return self.items.count;
+	}
+	
+	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+	{
+		var cell:UITableViewCell = self.friendTableView.dequeueReusableCellWithIdentifier("friends") as! UITableViewCell
+		
+		cell.textLabel?.text = self.items[indexPath.row]
+		
+		return cell
+	}
+	
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+	{
+		println("You selected cell #\(indexPath.row)!")
+	}
+	
 //    var friends = [[User]]()
     //retrieve friends from database
     

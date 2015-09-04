@@ -963,6 +963,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Hcx-Kn-hJn">
+                                <rect key="frame" x="16" y="20" width="568" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="U5a-Hb-bFZ" id="e4B-wg-1bs"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DWg-aM-uX9">
                                 <rect key="frame" x="16" y="64" width="568" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1013,14 +1020,11 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                            </tableView>
-                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Hcx-Kn-hJn">
-                                <rect key="frame" x="16" y="20" width="568" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="U5a-Hb-bFZ" id="e4B-wg-1bs"/>
+                                    <outlet property="dataSource" destination="U5a-Hb-bFZ" id="JT8-4Q-aOh"/>
+                                    <outlet property="delegate" destination="U5a-Hb-bFZ" id="yQT-jk-0qM"/>
                                 </connections>
-                            </searchBar>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1035,6 +1039,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Messages" id="66b-D6-ivc"/>
                     <connections>
+                        <outlet property="messageTableView" destination="DWg-aM-uX9" id="6ZN-QX-YPg"/>
                         <outlet property="searchDisplayController" destination="vg7-Zn-WG8" id="RkN-xc-LEN"/>
                     </connections>
                 </viewController>
@@ -1304,13 +1309,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="YmA-O9-EQo">
-                                <rect key="frame" x="16" y="20" width="568" height="44"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Jct-hH-epm" id="pjT-GC-beK"/>
-                                </connections>
-                            </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p21-hK-aqk">
                                 <rect key="frame" x="16" y="234" width="284" height="98"/>
                                 <subviews>
@@ -1379,6 +1377,13 @@
                                     <!--2015-07-30 05:34:06 +0000-->
                                 </date>
                             </datePicker>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="YmA-O9-EQo">
+                                <rect key="frame" x="16" y="20" width="568" height="44"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Jct-hH-epm" id="SYq-ON-fdz"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1399,20 +1404,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="ABH-FA-jO1"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="UrV-Ej-MHV" id="rOt-gi-Mxv"/>
                         <segue destination="FTh-Xa-kgt" kind="show" identifier="search" id="PFD-nf-VLF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxb-XH-eOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="UrV-Ej-MHV">
-                    <connections>
-                        <outlet property="delegate" destination="Jct-hH-epm" id="raJ-Ll-9w5"/>
-                        <outlet property="searchBar" destination="YmA-O9-EQo" id="BRl-lU-mAh"/>
-                        <outlet property="searchContentsController" destination="Jct-hH-epm" id="T0l-Uw-rBL"/>
-                        <outlet property="searchResultsDataSource" destination="Jct-hH-epm" id="ZX7-rv-xnQ"/>
-                        <outlet property="searchResultsDelegate" destination="Jct-hH-epm" id="MCF-Rc-1qj"/>
-                    </connections>
-                </searchDisplayController>
+                <searchDisplayController id="UrV-Ej-MHV"/>
             </objects>
             <point key="canvasLocation" x="2412" y="-251"/>
         </scene>
@@ -1576,6 +1572,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8nY-QD-1PS" id="0kG-yg-aeB"/>
+                                    <outlet property="delegate" destination="8nY-QD-1PS" id="ASA-5n-wLD"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1591,6 +1591,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Friends" id="8v9-TF-9Zd"/>
                     <connections>
+                        <outlet property="friendTableView" destination="s7V-qC-2rp" id="vvj-0W-MAn"/>
                         <outlet property="searchDisplayController" destination="BH0-7h-3zm" id="6o4-t2-Ky0"/>
                     </connections>
                 </viewController>
