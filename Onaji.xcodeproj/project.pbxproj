@@ -33,7 +33,6 @@
 		57D6C2411B75CAAD00CF13CB /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D6C2351B75CAAD00CF13CB /* Social.framework */; };
 		57D6C2421B75CAAD00CF13CB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D6C2361B75CAAD00CF13CB /* StoreKit.framework */; };
 		57D6C2431B75CAAD00CF13CB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D6C2371B75CAAD00CF13CB /* SystemConfiguration.framework */; };
-		57D6C2451B75CB6400CF13CB /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6C2441B75CB6400CF13CB /* Secret.swift */; };
 		6A42BF6B1B69E46D000C6B21 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A42BF6A1B69E46D000C6B21 /* SearchViewController.swift */; };
 		6A5616331B960BC000ABDA04 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5616321B960BC000ABDA04 /* SearchResultsViewController.swift */; };
 		6A9163DD1B879F4200C03C27 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9163DC1B879F4200C03C27 /* MainTabBarViewController.swift */; };
@@ -41,6 +40,7 @@
 		6A9C27F61B740F7F009B06F8 /* PreliminarySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9C27F51B740F7F009B06F8 /* PreliminarySettingsViewController.swift */; };
 		6A9C27F81B740FD3009B06F8 /* GeneralSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9C27F71B740FD3009B06F8 /* GeneralSettingsViewController.swift */; };
 		6A9C27FA1B740FF6009B06F8 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9C27F91B740FF6009B06F8 /* ProfileSettingsViewController.swift */; };
+		6ABF0E021BAFB76C008CBA32 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF0E011BAFB76C008CBA32 /* Secret.swift */; settings = {ASSET_TAGS = (); }; };
 		6AE566751B69C68D003077E3 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE566741B69C68D003077E3 /* UserInformation.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +85,6 @@
 		57D6C2351B75CAAD00CF13CB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		57D6C2361B75CAAD00CF13CB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		57D6C2371B75CAAD00CF13CB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		57D6C2441B75CB6400CF13CB /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		6A42BF6A1B69E46D000C6B21 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6A5616321B960BC000ABDA04 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		6A9163DC1B879F4200C03C27 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		6A9C27F51B740F7F009B06F8 /* PreliminarySettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreliminarySettingsViewController.swift; sourceTree = "<group>"; };
 		6A9C27F71B740FD3009B06F8 /* GeneralSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralSettingsViewController.swift; sourceTree = "<group>"; };
 		6A9C27F91B740FF6009B06F8 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
+		6ABF0E011BAFB76C008CBA32 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		6AE566741B69C68D003077E3 /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,7 +168,7 @@
 				3437E5A21B61E3FB00F0923E /* LoginScreenViewController.swift */,
 				6AE566741B69C68D003077E3 /* UserInformation.swift */,
 				3463A06D1B5EF12C004C4103 /* Supporting Files */,
-				57D6C2441B75CB6400CF13CB /* Secret.swift */,
+				6ABF0E011BAFB76C008CBA32 /* Secret.swift */,
 			);
 			path = Onaji;
 			sourceTree = "<group>";
@@ -331,9 +331,9 @@
 				5759B4E61B76E20C00938105 /* FriendViewController.swift in Sources */,
 				6A9C27F61B740F7F009B06F8 /* PreliminarySettingsViewController.swift in Sources */,
 				6A9C27FA1B740FF6009B06F8 /* ProfileSettingsViewController.swift in Sources */,
+				6ABF0E021BAFB76C008CBA32 /* Secret.swift in Sources */,
 				5759B4E81B76E20C00938105 /* MessagesViewController.swift in Sources */,
 				6AE566751B69C68D003077E3 /* UserInformation.swift in Sources */,
-				57D6C2451B75CB6400CF13CB /* Secret.swift in Sources */,
 				3437E59B1B61DC7E00F0923E /* LoginCreationViewController.swift in Sources */,
 				3437E5A31B61E3FB00F0923E /* LoginScreenViewController.swift in Sources */,
 				3463A0701B5EF12C004C4103 /* AppDelegate.swift in Sources */,

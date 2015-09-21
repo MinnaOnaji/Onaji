@@ -33,26 +33,25 @@ class LoginCreationViewController: UIViewController
             if let error = error
 			{
                 // Show the errorString somewhere and let the user try again.
-                let errorString = error.userInfo?["error"] as? NSString
-                println(error)
+                _ = error.userInfo["error"] as? NSString
+                print(error)
             }
 			else
 			{
                 //account.instantiateUser()
                 // Hooray! Let them use the app now.
-                println("Account with username " + self.username.text + " has been created successfully.")
+                print("Account with username " + self.username.text! + " has been created successfully.")
             }
         }
     }
 	
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
-	{
-        if let touch = touches.first as? UITouch
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		if let _ = touches.first
 		{
-            self.view.endEditing(true)
-        }
-    }
-    
+			self.view.endEditing(true)
+		}
+	}
+	
     func textFieldShouldReturn(textField: UITextField) -> Bool
 	{
         textField.resignFirstResponder()

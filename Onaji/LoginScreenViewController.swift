@@ -35,14 +35,14 @@ class LoginScreenViewController: UIViewController
     {
         //loginSuccess = userinfo.testLogin(username.text,password:password.text)
         
-        UserInformation.logInWithUsernameInBackground(username.text, password:password.text) {
+        UserInformation.logInWithUsernameInBackground(username.text!, password:password.text!) {
             (user: PFUser?, error: NSError?) -> Void in
 
             if user != nil {
                 let userInfo = UserInformation.currentUser()!
 
                 //userInfo.addFriend(forUserName: "testing4")
-                println(userInfo)
+                print(userInfo)
                 
                 self.loginState.text = Constants.yesMessage
                 self.performSegueWithIdentifier("loginCorrect", sender:self)
@@ -50,17 +50,18 @@ class LoginScreenViewController: UIViewController
             } else {
                 // The login failed. Check error to see why.
                 self.loginState.text = Constants.noMessage
-                println(error)
+                print(error)
             }
         }
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch{
-            self.view.endEditing(true)
-        }
-    }
-    
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		if let _ = touches.first
+		{
+			self.view.endEditing(true)
+		}
+	}
+	
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

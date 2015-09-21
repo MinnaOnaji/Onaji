@@ -30,7 +30,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
 	{
-		var cell:UITableViewCell = self.homeTableView.dequeueReusableCellWithIdentifier("home") as! UITableViewCell
+		var cell:UITableViewCell = self.homeTableView.dequeueReusableCellWithIdentifier("home")!
 		
 		cell.textLabel?.text = self.items[indexPath.row]
 		
@@ -39,6 +39,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
 	{
-		println("You selected cell #\(indexPath.row)!")
+		print("You selected cell #\(indexPath.row)!")
 	}
 }

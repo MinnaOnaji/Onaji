@@ -18,7 +18,7 @@ class GeneralSettingsViewController: UIViewController
 
 	@IBAction func saveClicked()
 	{
-		println("save clicked")
+		print("save clicked")
 		//Checks that old password is correct
 		//Checks new and confirm password match
 //		if newPasswordsMatch() && oldPasswordMatch()
@@ -31,12 +31,12 @@ class GeneralSettingsViewController: UIViewController
 			if let error = error
 			{
 				// Show the errorString somewhere and let the user try again.
-				let errorString = error.userInfo?["error"] as? NSString
-				println(error)
+				_ = error.userInfo["error"] as? NSString
+				print(error)
 			}
 			else
 			{
-				println(UserInformation.currentUser())
+				print(UserInformation.currentUser())
 			}
 		}
 	}
@@ -65,15 +65,15 @@ class GeneralSettingsViewController: UIViewController
 			//HELP HERE
 			if password == UserInformation.currentUser()?.password!
 			{
-				println("Password correct")
+				print("Password correct")
 				return true
 			}
 		}
 		else
 		{
-			println("Old password from database missing")
+			print("Old password from database missing")
 		}
-		println("Old passwords do not match")
+		print("Old passwords do not match")
 		return false
 	}
 	
@@ -82,14 +82,14 @@ class GeneralSettingsViewController: UIViewController
 		//Compares new passwords
 		if newPasswordTextField.text == confirmPasswordTextField.text
 		{
-			println("New passwords match")
+			print("New passwords match")
 			return true
 		}
 		else
 		{
-			println("No new password entered")
+			print("No new password entered")
 		}
-		println("New passwords do not match")
+		print("New passwords do not match")
 		return false
 	}
 	
@@ -109,9 +109,8 @@ class GeneralSettingsViewController: UIViewController
 		return true
 	}
 	
-	override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
-	{
-		if let touch = touches.first as? UITouch
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		if let _ = touches.first
 		{
 			self.view.endEditing(true)
 		}

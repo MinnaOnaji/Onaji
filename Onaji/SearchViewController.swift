@@ -16,7 +16,7 @@ class SearchViewController: UIViewController, sendSearchStringDelegate
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar)
     {
-		if let searchedString = searchBar.text
+		if let _ = searchBar.text
 		{
 			performSegueWithIdentifier("search", sender: searchBar)
 		}

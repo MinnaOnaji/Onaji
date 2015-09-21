@@ -33,7 +33,7 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 		}
 		else
 		{
-			println("Some fields incomplete")
+			print("Some fields incomplete")
 		}
 	}
 	
@@ -50,20 +50,20 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 		}
 		else
 		{
-			println("No one logged in")
+			print("No one logged in")
 		}
 		//Saves to the database
 		UserInformation.currentUser()!.saveInBackgroundWithBlock {(success: Bool, error: NSError?)-> Void in
 			if let error = error
 			{
 				// Show the errorString somewhere and let the user try again.
-				let errorString = error.userInfo?["error"] as? NSString
-				println(error)
+				_ = error.userInfo["error"] as? NSString
+				print(error)
 			}
 			else
 			{
-				println("saved")
-				println(UserInformation.currentUser())
+				print("saved")
+				print(UserInformation.currentUser())
 			}
 		}
 	}
@@ -88,7 +88,7 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 	}
 	
 	//MARK: Delegates
-	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!
+	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!?
 	{
 		return pickerData[row]
 	}
@@ -99,8 +99,9 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 	}
     
     //MARK: - Keyboard stuff
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch{
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let _ = touches.first
+		{
             self.view.endEditing(true)
         }
     }

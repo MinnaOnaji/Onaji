@@ -31,7 +31,7 @@ class MessagesViewController: UIViewController
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
 	{
-		var cell:UITableViewCell = self.messageTableView.dequeueReusableCellWithIdentifier("messaging") as! UITableViewCell
+		let cell:UITableViewCell = self.messageTableView.dequeueReusableCellWithIdentifier("messaging")!
 		
 		cell.textLabel?.text = self.items[indexPath.row]
 		
@@ -40,6 +40,6 @@ class MessagesViewController: UIViewController
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
 	{
-		println("You selected cell #\(indexPath.row)!")
+		print("You selected cell #\(indexPath.row)!")
 	}
 }

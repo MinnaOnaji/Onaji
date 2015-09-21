@@ -21,7 +21,7 @@ class ProfileSettingsViewController: UIViewController, UIPickerViewDataSource, U
 	@IBAction func saveClicked()
 	{
 		//Save the changes and send to database
-        println("save clicked")
+        print("save clicked")
         UserInformation.currentUser()?.address = streetAddressTextField.text!
         UserInformation.currentUser()?.homeState = selectedState!
         UserInformation.currentUser()?.zipCode = zipCodeTextField.text!
@@ -30,12 +30,12 @@ class ProfileSettingsViewController: UIViewController, UIPickerViewDataSource, U
             if let error = error
             {
                 // Show the errorString somewhere and let the user try again.
-                let errorString = error.userInfo?["error"] as? NSString
-                println(error)
+                _ = error.userInfo["error"] as? NSString
+                print(error)
             }
             else
             {
-                println(UserInformation.currentUser())
+                print(UserInformation.currentUser())
             }
         }
 	}
@@ -61,7 +61,7 @@ class ProfileSettingsViewController: UIViewController, UIPickerViewDataSource, U
 		}
 		else
 		{
-			println("no current address")
+			print("no current address")
 		}
 		
 		if let currentState = UserInformation.currentUser()?.homeState
@@ -80,7 +80,7 @@ class ProfileSettingsViewController: UIViewController, UIPickerViewDataSource, U
 		}
 		else
 		{
-			println("no current state")
+			print("no current state")
 		}
 		
 		if let zipCode = UserInformation.currentUser()?.zipCode
@@ -89,7 +89,7 @@ class ProfileSettingsViewController: UIViewController, UIPickerViewDataSource, U
 		}
 		else
 		{
-			println("no zip code value")
+			print("no zip code value")
 		}
 	}
 	
@@ -106,7 +106,7 @@ class ProfileSettingsViewController: UIViewController, UIPickerViewDataSource, U
 	}
 	
 	//MARK: Delegates
-	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!
+	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
 	{
 		return pickerData[row]
 	}
@@ -114,16 +114,17 @@ class ProfileSettingsViewController: UIViewController, UIPickerViewDataSource, U
 	func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
 	{
 		selectedState = pickerData[row]
-        println(selectedState)
+        print(selectedState)
 	}
     
     //MARK: - Keyboard stuff
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch{
-            self.view.endEditing(true)
-        }
-    }
-    
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		if let _ = touches.first
+		{
+			self.view.endEditing(true)
+		}
+	}
+	
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

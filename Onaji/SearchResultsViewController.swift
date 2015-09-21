@@ -29,10 +29,10 @@ class SearchResultsViewController: UIViewController
 		}
 		else
 		{
-			println("no search text")
+			print("no search text")
 		}
 		
-		println("filtered tutors: \(filteredTutors)")
+		print("filtered tutors: \(filteredTutors)")
 	}
 	
 	// prints out all UserInformations that has subject as one of their subjects
@@ -49,15 +49,15 @@ class SearchResultsViewController: UIViewController
 				{
 					// objects is [UserInformation] that contains corresponding subject
 					for user in objects {
-						println(user.username!)
-						println(user.subjects)
+						print(user.username!)
+						print(user.subjects)
 						result.append(user)
 					}
 				}
 			}
 		}
 		
-		println(result)
+		print(result)
 		return result
 	}
 	

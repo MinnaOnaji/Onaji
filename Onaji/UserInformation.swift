@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class UserInformation : PFUser, PFSubclassing
+class UserInformation : PFUser
 {
     // user information properties
     @NSManaged var firstName: String
@@ -46,14 +46,14 @@ class UserInformation : PFUser, PFSubclassing
                     }
                     
                     if alreadyFriend {
-                        println("friend is already added")
+                        print("friend is already added")
                     }
                     else
                     {
                         self.friends.append(friendUserInfo)
                         self.save()
                         
-                        println(friendUserInfo.username! + " is now " + self.username! + "'s friend.")
+                        print(friendUserInfo.username! + " is now " + self.username! + "'s friend.")
                     }
                 }
             }

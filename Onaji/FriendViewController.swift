@@ -27,7 +27,7 @@ class FriendViewController: UIViewController
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
 	{
-		var cell:UITableViewCell = self.friendTableView.dequeueReusableCellWithIdentifier("friends") as! UITableViewCell
+		let cell:UITableViewCell = self.friendTableView.dequeueReusableCellWithIdentifier("friends")!
 		
 		cell.textLabel?.text = self.items[indexPath.row]
 		
@@ -36,7 +36,7 @@ class FriendViewController: UIViewController
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
 	{
-		println("You selected cell #\(indexPath.row)!")
+		print("You selected cell #\(indexPath.row)!")
 	}
 	
 //    var friends = [[User]]()
