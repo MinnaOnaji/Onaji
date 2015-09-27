@@ -21,7 +21,7 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 	
 	var selectedState: String?
 	
-	let pickerData = ["Select one","Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+	var pickerData = ["Select one","Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 	
 	@IBAction func saveClicked(sender: UIButton)
 	{
@@ -88,7 +88,7 @@ class PreliminarySettingsViewController: UIViewController, UIPickerViewDataSourc
 	}
 	
 	//MARK: Delegates
-	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!?
+	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
 	{
 		return pickerData[row]
 	}

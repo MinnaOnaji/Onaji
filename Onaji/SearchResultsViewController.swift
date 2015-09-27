@@ -9,9 +9,7 @@
 import UIKit
 
 class SearchResultsViewController: UIViewController
-{
-	var filteredTutors = [UserInformation]()
-	
+{	
 	@IBOutlet weak var searchedStringLabel: UILabel!
 	
 	@IBOutlet weak var searchResultsTable: UITableView!
@@ -25,49 +23,29 @@ class SearchResultsViewController: UIViewController
 		if let searchedString = searchStringDelegate?.getString()!
 		{
 			searchedStringLabel.text = searchedString
-			filterContentForSearchText(searchedString)
+		}
+		if let searchResults = searchStringDelegate?.getTutors()!
+		{
+			displayResults(searchResults)
 		}
 		else
 		{
 			print("no search text")
 		}
-		
-		print("filtered tutors: \(filteredTutors)")
 	}
 	
-	// prints out all UserInformations that has subject as one of their subjects
-	func findTutorWithSubject(subject: String) -> [UserInformation]
+	func displayResults(tutors: [UserInformation])
 	{
-		let query = UserInformation.query()!
-		query.whereKey("subjects", equalTo: subject)
-		var result = [UserInformation]()
-		
-		query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-			if error == nil
-			{
-				if let objects = objects as? [UserInformation]
-				{
-					// objects is [UserInformation] that contains corresponding subject
-					for user in objects {
-						print(user.username!)
-						print(user.subjects)
-						result.append(user)
-					}
-				}
-			}
+		for cell in tutors
+		{
+			
 		}
-		
-		print(result)
-		return result
-	}
-	
-	func filterContentForSearchText(searchText: String)
-	{
-		filteredTutors = findTutorWithSubject(searchText)
 	}
 }
 
 protocol sendSearchStringDelegate
 {
 	func getString() -> String?
+	
+	func getTutors() -> [UserInformation]?
 }

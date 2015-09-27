@@ -13,6 +13,7 @@ class ProfileSettingsViewController: UIViewController, UIPickerViewDataSource, U
 	@IBOutlet weak var streetAddressTextField: UITextField!
 	@IBOutlet weak var statePicker: UIPickerView!
 	@IBOutlet weak var zipCodeTextField: UITextField!
+	@IBOutlet weak var subjectTextField: UITextField!
 	
 	var selectedState: String?
 	
@@ -25,6 +26,7 @@ class ProfileSettingsViewController: UIViewController, UIPickerViewDataSource, U
         UserInformation.currentUser()?.address = streetAddressTextField.text!
         UserInformation.currentUser()?.homeState = selectedState!
         UserInformation.currentUser()?.zipCode = zipCodeTextField.text!
+		UserInformation.currentUser()?.addSubject(subjectTextField.text!)
         
         UserInformation.currentUser()?.saveInBackgroundWithBlock {(success: Bool, error: NSError?) -> Void in
             if let error = error

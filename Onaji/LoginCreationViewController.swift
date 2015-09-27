@@ -41,6 +41,7 @@ class LoginCreationViewController: UIViewController
                 //account.instantiateUser()
                 // Hooray! Let them use the app now.
                 print("Account with username " + self.username.text! + " has been created successfully.")
+				self.performSegueWithIdentifier("creationSuccess", sender: self)
             }
         }
     }
