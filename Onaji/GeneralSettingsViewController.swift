@@ -25,8 +25,12 @@ class GeneralSettingsViewController: UIViewController
 //		{
 //			UserInformation.currentUser()?.password = newPasswordTextField.text
 //		}
-		UserInformation.currentUser()?.password = newPasswordTextField.text
-		UserInformation.currentUser()?.email = newEmailTextField.text
+        if(newPasswordTextField.text != "" ) {
+            UserInformation.currentUser()?.password = newPasswordTextField.text
+        }
+        if(newEmailTextField.text != "") {
+            UserInformation.currentUser()?.email = newEmailTextField.text
+        }
 		UserInformation.currentUser()?.saveInBackgroundWithBlock {(success: Bool, error: NSError?) -> Void in
 			if let error = error
 			{
